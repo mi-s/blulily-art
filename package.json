@@ -1,0 +1,19 @@
+{
+  "name": "brilily-art",
+  "version": "1.0.0",
+  "description": "[brilily.art](brilily.art)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-s/brilily-art.git"
+  },
+  "author": "Michael Su",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mi-s/brilily-art/issues"
+  },
+  "homepage": "https://github.com/mi-s/brilily-art#readme"
+}
