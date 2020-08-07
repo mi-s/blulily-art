@@ -1,0 +1,19 @@
+{
+  "name": "blulily-art",
+  "version": "1.0.0",
+  "description": "[blulily.art](blulily.art)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-s/blulily-art.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mi-s/blulily-art/issues"
+  },
+  "homepage": "https://github.com/mi-s/blulily-art#readme"
+}
