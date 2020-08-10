@@ -6,12 +6,10 @@ const Validate = (name, value) => {
       case "name":
          errors.name = value.length === 0 ? "Username is required" : "";
          break;
-      case "email":
-         errors.email =
+      case "user_name":
+         errors.user_name =
             value.length === 0
-               ? "Email is required"
-               : !value.match(PATTERN)
-               ? "Enter a valid email id"
+               ? "Username is required"
                : "";
          break;
       case "password":

@@ -58,7 +58,7 @@ const Blog = ({ posts, auth }) => {
                   className="d-flex flex-column justify-content-center align-items-center"
                >
                   {" "}
-                  <p className="text-secondary h3">No Post Found !</p>
+                  <p className="text-secondary h3">No posts found!</p>
                </Container>
             )
          )}

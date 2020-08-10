@@ -8,7 +8,7 @@ import { clearErrors } from "../../actions/errorActions";
 
 const LoginPage = ({ loginUser, auth, errors, history, clearErrors }) => {
    const [user, setUser] = useState({
-      email: "",
+      user_name: "",
       password: "",
       errors: {}
    });
@@ -27,7 +27,7 @@ const LoginPage = ({ loginUser, auth, errors, history, clearErrors }) => {
 
    useEffect(() => {
       if (auth.isAuthenticated) {
-         history.push("/blog");
+         history.push("/");       // from '/blog' to '/'
       }
       setUser(user => {
          return { ...user, errors };
@@ -49,8 +49,8 @@ const LoginPage = ({ loginUser, auth, errors, history, clearErrors }) => {
 
    const handleSubmit = e => {
       e.preventDefault();
-      const { email, password } = user;
-      loginUser({ email, password });
+      const { user_name, password } = user;
+      loginUser({ user_name, password });
    };
 
    return (

@@ -34,11 +34,14 @@ const App = () => {
       <Provider store={store}>
          <BrowserRouter>
             <Navbar />
+            <div class="container">
             <Switch>
                <Route path="/" exact component={BlogPage} />
                <Route path="/login" component={LoginPage} />
-               <Route path="/signup" component={SignUpPage} />
-               <PrivateRoute exact path="/blog" component={BlogPage} />
+               {/* Removed Signup page
+                <Route path="/signup" component={SignUpPage} />
+               */}
+               {/* <PrivateRoute exact path="/blog" component={BlogPage} /> */}
                <PrivateRoute
                   exact
                   path="/blog/post/create"
@@ -53,6 +56,7 @@ const App = () => {
                <Route path="/blog/:author" component={BlogPage} />
                <Redirect from="*" to="/" />
             </Switch>
+            </div>
          </BrowserRouter>
       </Provider>
    );

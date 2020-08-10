@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 
 const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
-   const { email, password, errors } = user;
+   const { user_name, password, errors } = user;
    return (
       <Container>
          <Row>
@@ -35,16 +35,16 @@ const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
                            <Alert variant="success">{message}</Alert>
                         )}
                         <Input
-                           name="email"
-                           type="email"
-                           placeholder="Enter Email"
-                           value={email}
-                           onChange={onChange}
+                           name="user_name"
+                           type="user_name"
+                           placeholder="Enter Username"
+                           value={user_name}
                            onBlur={onBlur}
+                           onChange={onChange}
                            text={{
                               module: "login",
-                              label: "Email",
-                              error: errors.email
+                              label: "Username",
+                              error: errors.user_name
                            }}
                         />
                         <Input
@@ -68,11 +68,12 @@ const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
                         >
                            Submit
                         </Button>
-
+                        {/* Removed Signup Link 
                         <Card.Text className="mt-2">
                            Don't have an account?{" "}
                            <Link to={"/signup"}>SignUp</Link>
                         </Card.Text>
+                        */}
                      </Card.Body>
                   </Form>
                </Card>
