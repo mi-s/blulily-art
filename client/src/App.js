@@ -44,16 +44,16 @@ const App = () => {
                {/* <PrivateRoute exact path="/blog" component={BlogPage} /> */}
                <PrivateRoute
                   exact
-                  path="/blog/post/create"
+                  path="/post/create"
                   component={CreatePostPage}
                />
                <PrivateRoute
                   exact
-                  path="/blog/post/update/:id"
+                  path="/post/update/:id"
                   component={UpdatePostPage}
                />
-               <Route exact path="/blog/post/:id" component={ViewPostPage} />
-               <Route path="/blog/:author" component={BlogPage} />
+               <Route exact path="/post/:id" component={ViewPostPage} />
+               <Route path="/:author" component={BlogPage} />
                <Redirect from="*" to="/" />
             </Switch>
             </div>
