@@ -7,9 +7,9 @@ const validatePostInput = require("../../validation/post");
 
 router.get(
    "/",
-   passport.authenticate("jwt", { session: false }),
+   // passport.authenticate("jwt", { session: false }),
    (req, res) => {
-      Post.find({ author: req.user.user_name })
+      Post.find({})
          .then(posts => res.status(200).json(posts))
          .catch(err =>
             res

@@ -35,27 +35,29 @@ const App = () => {
          <BrowserRouter>
             <Navbar />
             <div class="container">
-            <Switch>
-               <Route path="/" exact component={BlogPage} />
-               <Route path="/login" component={LoginPage} />
-               {/* Removed Signup page
+               <Switch>
+
+                  <Route path="/" exact component={BlogPage} />
+                  <Route path="/author/:author" exact component={BlogPage} />
+                  <Route path="/login" component={LoginPage} />
+                  {/* Removed Signup page
                 <Route path="/signup" component={SignUpPage} />
                */}
-               {/* <PrivateRoute exact path="/blog" component={BlogPage} /> */}
-               <PrivateRoute
-                  exact
-                  path="/post/create"
-                  component={CreatePostPage}
-               />
-               <PrivateRoute
-                  exact
-                  path="/post/update/:id"
-                  component={UpdatePostPage}
-               />
-               <Route exact path="/post/:id" component={ViewPostPage} />
-               <Route path="/:author" component={BlogPage} />
-               <Redirect from="*" to="/" />
-            </Switch>
+                  {/* <PrivateRoute exact path="/blog" component={BlogPage} /> */}
+                  <PrivateRoute
+                     exact
+                     path="/post/create"
+                     component={CreatePostPage}
+                  />
+                  <PrivateRoute
+                     exact
+                     path="/post/update/:id"
+                     component={UpdatePostPage}
+                  />
+                  <Route exact path="/post/:id" component={ViewPostPage} />
+
+                  <Redirect from="*" to="/" />
+               </Switch>
             </div>
          </BrowserRouter>
       </Provider>
