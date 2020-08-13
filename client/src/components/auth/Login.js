@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import Input from "../form/Input";
 import {
    Card,
@@ -12,9 +11,13 @@ import {
    Alert
 } from "react-bootstrap";
 
+import HomeButton from "../layout/HomeButton"
+
 const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
    const { user_name, password, errors } = user;
    return (
+      <>
+      <HomeButton />
       <Container>
          <Row>
             <Col className="mx-auto" sm={11} md={7} lg={5}>
@@ -80,6 +83,7 @@ const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
             </Col>
          </Row>
       </Container>
+      </>
    );
 };
 

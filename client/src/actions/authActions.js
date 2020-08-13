@@ -6,24 +6,6 @@ import { SET_CURRENT_USER, TOGGLE_USER_LOADING } from "./types";
 import { resetPost } from "./postActions";
 import { setErrors } from "./errorActions";
 
-export const registerUser = (userData, history) => dispatch => {
-   dispatch(toggleUserLoading());
-   axios
-      .post("/api/users/signup", userData)
-      .then(res => {
-         dispatch(toggleUserLoading());
-         localStorage.setItem(
-            "loginMessage",
-            "Successfully registered. Login to continue"
-         );
-         history.push("/login");
-      })
-      .catch(err => {
-         dispatch(setErrors(err.response.data));
-         dispatch(toggleUserLoading());
-      });
-};
-
 export const loginUser = userData => dispatch => {
    dispatch(toggleUserLoading());
    axios

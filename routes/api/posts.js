@@ -4,7 +4,6 @@ const Post = require("../../models/Post");
 const passport = require("passport");
 const validatePostInput = require("../../validation/post");
 
-
 router.get(
    "/",
    // passport.authenticate("jwt", { session: false }),

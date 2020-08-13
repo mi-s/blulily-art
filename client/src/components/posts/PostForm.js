@@ -4,9 +4,13 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import Input from "../form/Input";
 import Textarea from "../form/Textarea";
 
+import HomeButton from "../layout/HomeButton"
+
 const PostForm = ({ post, onChange, onBlur, loading, onSubmit }) => {
    const { title, body, errors } = post;
    return (
+      <>
+      <HomeButton />
       <Container>
          <Row>
             <Col className="mx-auto">
@@ -48,6 +52,7 @@ const PostForm = ({ post, onChange, onBlur, loading, onSubmit }) => {
             </Col>
          </Row>
       </Container>
+      </>
    );
 };
 

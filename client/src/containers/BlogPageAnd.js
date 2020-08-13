@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Blog from "../components/user/Blog";
+import Blog from "../components/user/BlogAnd";
 import { getPosts, getPostsByAuthor } from "../actions/postActions";
 
-const BlogPage = ({
+const BlogPageAnd = ({
    isAuthenticated,
    getPostsByAuthor,
    getPosts,
@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
    posts: state.post.posts
 });
 
-BlogPage.propTypes = {
+BlogPageAnd.propTypes = {
    posts: PropTypes.array.isRequired,
    isAuthenticated: PropTypes.bool.isRequired,
    getPosts: PropTypes.func.isRequired,
@@ -33,4 +33,4 @@ BlogPage.propTypes = {
 export default connect(
    mapStateToProps,
    { getPostsByAuthor, getPosts }
-)(BlogPage);
+)(BlogPageAnd);

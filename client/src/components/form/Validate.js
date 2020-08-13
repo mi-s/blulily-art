@@ -1,5 +1,3 @@
-const PATTERN = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+).([a-zA-Z]{2,5})$";
-
 const Validate = (name, value) => {
    let errors = {};
    switch (name) {

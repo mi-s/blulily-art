@@ -7,15 +7,16 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import LoginPage from "./containers/auth/LoginPage";
-import SignUpPage from "./containers/auth/SignUpPage";
 
-import Navbar from "./containers/layout/Navbar";
-import BlogPage from "./containers/BlogPage";
 import PrivateRoute from "./utils/PrivateRoute";
 
 import ViewPostPage from "./containers/posts/ViewPostPage";
 import CreatePostPage from "./containers/posts/CreatePostPage";
 import UpdatePostPage from "./containers/posts/UpdatePostPage";
+
+import BlogPageAnd from "./containers/BlogPageAnd";
+import BlogPageBlu from "./containers/BlogPageBlu";
+import BlogPageLily from "./containers/BlogPageLily";
 
 if (localStorage.jwtToken) {
    const token = localStorage.jwtToken;
@@ -33,17 +34,11 @@ const App = () => {
    return (
       <Provider store={store}>
          <BrowserRouter>
-            <Navbar />
-            <div class="container">
                <Switch>
-
-                  <Route path="/" exact component={BlogPage} />
-                  <Route path="/author/:author" exact component={BlogPage} />
+                  <Route path="/" exact component={BlogPageAnd} />
+                  <Route path="/author/blu" exact component={BlogPageBlu} />
+                  <Route path="/author/lily" exact component={BlogPageLily} />
                   <Route path="/login" component={LoginPage} />
-                  {/* Removed Signup page
-                <Route path="/signup" component={SignUpPage} />
-               */}
-                  {/* <PrivateRoute exact path="/blog" component={BlogPage} /> */}
                   <PrivateRoute
                      exact
                      path="/post/create"
@@ -55,10 +50,8 @@ const App = () => {
                      component={UpdatePostPage}
                   />
                   <Route exact path="/post/:id" component={ViewPostPage} />
-
                   <Redirect from="*" to="/" />
                </Switch>
-            </div>
          </BrowserRouter>
       </Provider>
    );
